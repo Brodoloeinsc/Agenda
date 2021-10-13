@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--Meta tags-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Title-->
+    <title>TODO APP</title>
+    <!--CSS e JS-->
+    <link rel="stylesheet" href="estilo.css">
+    <script src="app.js" defer></script>
+    <style>
+        *{
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            background-color: #b3e8e8;
+            padding: 10px;
+        }
+
+        .cadastro{
+            display: none;
+        }
+
+        .login{
+            display: block;
+        }
+
+        h2{
+            font-weight: 300;
+        }
+
+        .login input{
+            color: #000;
+            font-weight: 400;
+        }
+
+        input[type="submit"]{
+            background-color: #673ab7;
+            color: #fff;
+            font-size: 15px;
+            border: 0;
+            cursor: pointer;
+        }
+
+        input{
+            width: 100%;
+            height: 40px;
+            display: block;
+            max-width: 500px;
+            margin: 10px auto;
+            padding-left: 10px;
+        }
+
+        .container-login textarea{
+            width: 100%;
+            height: 120px;
+            display: block;
+            max-width: 500px;
+            margin: 10px auto;
+            resize: none;
+            padding: 10px;
+        }
+
+        .container-login{
+            display: none;
+        }
+
+        .container-login,
+        .login{
+            max-width: 750px;
+            margin: 0 auto;
+            text-align: center;
+            background-color: rgb(240,240,240);
+            border-radius: 20px;
+            padding: 20px;
+        }
+
+        .tarefas-user ul{
+            list-style-type: none;
+        }
+
+        .tarefas-user li{
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .tarefas-user li a{
+            color: red;
+        }
+
+        .container-no-login{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login">
+        <h2>Faça seu Login</h2>
+        <form class="login-form">
+            <input placeholder="Seu email" type="email" name="email">
+            <input placeholder="Sua senha" type="password" name="password">
+            <input type="submit" name="acao" value="Logar!">
+        </form>
+    </div>
+    <div class="container-login">
+        <h2>Logado com sucesso</h2>
+        <a class="logout" href="javascript:void(0);">Logout</a>
+        <form class="cadastro-tarefa">
+            <textarea placeholder="Nome da sua tarefa..." name="tarefa"></textarea>
+            <input type="datetime-local" name="datetime">
+            <input type="submit" name="acao" value="Cadastrar tarefa">
+        </form>
+        <div class="tarefas-user">
+            <h3>Listagem de tarefas atuais:</h3>
+            <ul id="tarefas"></ul>
+        </div>
+    </div>
+    <div class="container-no-login">
+        <h2>Não foi possível logar, email ou senha incorretos</h2>
+    </div>
+
+    <div class="tarefas">
+        
+    </div>
+
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
+
+    <script src="app.js" defer></script>
+</body>
+</html>
